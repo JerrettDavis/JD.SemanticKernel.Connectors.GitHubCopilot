@@ -206,6 +206,8 @@ dotnet_naming_style.camel_case_style.capitalization = camel_case
 
 # CA1054: URI parameters should not be strings (too noisy)
 dotnet_diagnostic.CA1054.severity = none
+# CA1056: URI properties should not be strings (intentional for config binding)
+dotnet_diagnostic.CA1056.severity = none
 # CA1062: Validate arguments of public methods (we use ArgumentNullException guards)
 dotnet_diagnostic.CA1062.severity = none
 # CA2007: ConfigureAwait (library code)
@@ -223,6 +225,8 @@ dotnet_diagnostic.CA1309.severity = suggestion
 dotnet_diagnostic.CA1819.severity = none
 # CA2000: Dispose objects (false positives on handler→HttpClient ownership transfer)
 dotnet_diagnostic.CA2000.severity = suggestion
+# CA5400: HttpClient without CRL check (handled via conditional compilation + insecure flag)
+dotnet_diagnostic.CA5400.severity = none
 # IDE0058: Expression value unused (noisy)
 dotnet_diagnostic.IDE0058.severity = none
 # IDE0046: Convert to conditional expression (reduces readability)
@@ -242,9 +246,12 @@ dotnet_diagnostic.MA0046.severity = none
 
 # ─── Test project overrides ─────────────────────────────────────
 [tests/**/*.cs]
+dotnet_diagnostic.CA1031.severity = none
+dotnet_diagnostic.CA1063.severity = none
 dotnet_diagnostic.CA1515.severity = none
 dotnet_diagnostic.CA1707.severity = none
 dotnet_diagnostic.CA1812.severity = none
+dotnet_diagnostic.CA1816.severity = none
 dotnet_diagnostic.CA1822.severity = none
 dotnet_diagnostic.CA2007.severity = none
 dotnet_diagnostic.CA2234.severity = none
