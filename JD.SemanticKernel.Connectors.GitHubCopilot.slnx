@@ -9,5 +9,6 @@
   <Folder Name="/tests/">
     <Project Path="tests\JD.SemanticKernel.Connectors.Abstractions.Tests\JD.SemanticKernel.Connectors.Abstractions.Tests.csproj" />
     <Project Path="tests\JD.SemanticKernel.Connectors.GitHubCopilot.Tests\JD.SemanticKernel.Connectors.GitHubCopilot.Tests.csproj" />
+    <Project Path="tests\JD.SemanticKernel.Connectors.GitHubCopilot.IntegrationTests\JD.SemanticKernel.Connectors.GitHubCopilot.IntegrationTests.csproj" />
   </Folder>
 </Solution>
