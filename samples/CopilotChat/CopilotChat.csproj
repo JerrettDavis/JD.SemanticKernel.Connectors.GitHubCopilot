@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>jdcplt</ToolCommandName>
+    <PackageId>JD.Tools.CopilotChat</PackageId>
+    <Description>Interactive AI chat CLI powered by GitHub Copilot subscription authentication via Semantic Kernel.</Description>
+    <PackageTags>copilot;chat;cli;semantic-kernel;ai;dotnet-tool</PackageTags>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\JD.SemanticKernel.Connectors.GitHubCopilot\JD.SemanticKernel.Connectors.GitHubCopilot.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SemanticKernel" />
+    <PackageReference Include="System.CommandLine" />
+  </ItemGroup>
+
+</Project>

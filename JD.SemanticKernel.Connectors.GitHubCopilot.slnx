@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src\JD.SemanticKernel.Connectors.Abstractions\JD.SemanticKernel.Connectors.Abstractions.csproj" />
+    <Project Path="src\JD.SemanticKernel.Connectors.GitHubCopilot\JD.SemanticKernel.Connectors.GitHubCopilot.csproj" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples\CopilotChat\CopilotChat.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests\JD.SemanticKernel.Connectors.Abstractions.Tests\JD.SemanticKernel.Connectors.Abstractions.Tests.csproj" />
+    <Project Path="tests\JD.SemanticKernel.Connectors.GitHubCopilot.Tests\JD.SemanticKernel.Connectors.GitHubCopilot.Tests.csproj" />
+  </Folder>
+</Solution>
