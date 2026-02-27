@@ -1,0 +1,24 @@
+# Code Owners for JD.SemanticKernel.Connectors.GitHubCopilot
+# These users will be automatically requested for review
+
+# Global owners
+* @jerrettdavis
+
+# Workflows and CI/CD
+/.github/ @jerrettdavis
+
+# Documentation
+/docs/ @jerrettdavis
+*.md @jerrettdavis
+
+# Abstractions library
+/src/JD.SemanticKernel.Connectors.Abstractions/ @jerrettdavis
+
+# Copilot connector library
+/src/JD.SemanticKernel.Connectors.GitHubCopilot/ @jerrettdavis
+
+# Samples
+/samples/ @jerrettdavis
+
+# Tests
+/tests/ @jerrettdavis

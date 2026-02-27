@@ -1,0 +1,40 @@
+# Auto-labeling configuration for pull requests
+
+'area: abstractions':
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/JD.SemanticKernel.Connectors.Abstractions/**/*'
+
+'area: copilot':
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/JD.SemanticKernel.Connectors.GitHubCopilot/**/*'
+
+'area: samples':
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'samples/**/*'
+
+'area: documentation':
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.md'
+      - 'docs/**/*'
+
+'area: tests':
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'tests/**/*'
+
+'area: ci/cd':
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.github/**/*'
+
+'dependencies':
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.csproj'
+      - 'Directory.Build.props'
+      - 'Directory.Packages.props'
+      - 'version.json'
