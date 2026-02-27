@@ -28,7 +28,7 @@ var kernel = Kernel.CreateBuilder()
 ```csharp
 var kernel = Kernel.CreateBuilder()
     .UseCopilotChatCompletion(
-        modelId: CopilotModels.Gpt4o,
+        modelId: CopilotModels.ClaudeSonnet46,
         configure: options =>
         {
             options.EditorVersion = "vscode/1.104.1";

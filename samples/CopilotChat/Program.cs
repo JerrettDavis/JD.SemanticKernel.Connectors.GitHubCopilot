@@ -5,7 +5,7 @@ using Microsoft.SemanticKernel.ChatCompletion;
 
 var modelOption = new Option<string>("--model", "-m")
 {
-    Description = "AI model to use (e.g. gpt-4o, claude-sonnet-4, gemini-2.0-flash)",
+    Description = "AI model to use (e.g. claude-sonnet-4.6, claude-opus-4.6, gpt-5.2, gemini-3-pro-preview)",
     DefaultValueFactory = _ => CopilotModels.Default,
 };
 

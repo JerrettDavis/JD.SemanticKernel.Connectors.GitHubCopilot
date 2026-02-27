@@ -22,11 +22,17 @@ foreach (var model in models)
 ## Output example
 
 ```
-gpt-4o (openai) — GPT-4o
-gpt-4.1 (openai) — GPT-4.1
-claude-sonnet-4 (anthropic) — Claude Sonnet 4
-gemini-2.5-pro (google) — Gemini 2.5 Pro
-o4-mini (openai) — o4-mini
+claude-opus-4.6 (Anthropic) — Claude Opus 4.6
+claude-opus-4.6-fast (Anthropic) — Claude Opus 4.6 (fast mode)
+claude-sonnet-4.6 (Anthropic) — Claude Sonnet 4.6
+claude-sonnet-4 (Anthropic) — Claude Sonnet 4
+claude-haiku-4.5 (Anthropic) — Claude Haiku 4.5
+gpt-5.3-codex (OpenAI) — GPT-5.3-Codex
+gpt-5.2 (OpenAI) — GPT-5.2
+gpt-5-mini (Azure OpenAI) — GPT-5 mini
+gemini-3.1-pro-preview (Google) — Gemini 3.1 Pro
+grok-code-fast-1 (xAI) — Grok Code Fast 1
+... (41+ models total)
 ```
 
 ## Interface
@@ -57,16 +63,34 @@ jdcplt --list-models
 
 ## Known model constants
 
-The `CopilotModels` class provides constants for commonly used models:
+The `CopilotModels` class provides constants for commonly used models across 5 providers:
 
 ```csharp
 public static class CopilotModels
 {
-    public const string Default = "gpt-4o";
-    public const string Gpt4o = "gpt-4o";
-    public const string Gpt41 = "gpt-4.1";
+    // Default
+    public const string Default = "claude-sonnet-4.6";
+
+    // Anthropic
+    public const string ClaudeOpus46 = "claude-opus-4.6";
+    public const string ClaudeOpus46Fast = "claude-opus-4.6-fast";
+    public const string ClaudeSonnet46 = "claude-sonnet-4.6";
     public const string ClaudeSonnet4 = "claude-sonnet-4";
-    public const string Gemini25Pro = "gemini-2.5-pro";
-    public const string O4Mini = "o4-mini";
+    public const string ClaudeHaiku45 = "claude-haiku-4.5";
+
+    // OpenAI
+    public const string Gpt53Codex = "gpt-5.3-codex";
+    public const string Gpt52 = "gpt-5.2";
+    public const string Gpt51Codex = "gpt-5.1-codex";
+    public const string Gpt5Mini = "gpt-5-mini";
+    public const string Gpt4o = "gpt-4o";
+
+    // Google
+    public const string Gemini31Pro = "gemini-3.1-pro-preview";
+    public const string Gemini3Pro = "gemini-3-pro-preview";
+    public const string Gemini3Flash = "gemini-3-flash-preview";
+
+    // xAI
+    public const string GrokCodeFast1 = "grok-code-fast-1";
 }
 ```

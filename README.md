@@ -51,23 +51,38 @@ var kernel = Kernel.CreateBuilder()
 
 ## Available Models
 
-Copilot provides access to multiple AI providers through a single subscription:
+Copilot provides access to **41+ models** from multiple AI providers through a single subscription.
+Use `CopilotModelDiscovery` to discover all available models at runtime, or reference well-known constants:
 
-| Constant | Model ID | Provider |
-|---|---|---|
-| `CopilotModels.Gpt4o` | `gpt-4o` | OpenAI |
-| `CopilotModels.Gpt41` | `gpt-4.1` | OpenAI |
-| `CopilotModels.O4Mini` | `o4-mini` | OpenAI |
-| `CopilotModels.ClaudeSonnet4` | `claude-sonnet-4` | Anthropic |
-| `CopilotModels.ClaudeSonnet35` | `claude-3.5-sonnet` | Anthropic |
-| `CopilotModels.Gemini20Flash` | `gemini-2.0-flash` | Google |
-| `CopilotModels.Gemini25Pro` | `gemini-2.5-pro` | Google |
+### Key Models (Constants)
 
-Discover models at runtime:
+| Constant | Model ID | Provider | Best For |
+|---|---|---|---|
+| **Anthropic** | | | |
+| `CopilotModels.ClaudeOpus46` | `claude-opus-4.6` | Anthropic | Deep reasoning, complex analysis |
+| `CopilotModels.ClaudeOpus46Fast` | `claude-opus-4.6-fast` | Anthropic | Faster Opus variant |
+| `CopilotModels.ClaudeSonnet46` | `claude-sonnet-4.6` | Anthropic | Balanced quality/speed (default) |
+| `CopilotModels.ClaudeSonnet4` | `claude-sonnet-4` | Anthropic | Reliable completions |
+| `CopilotModels.ClaudeHaiku45` | `claude-haiku-4.5` | Anthropic | Fast, lightweight tasks |
+| **OpenAI** | | | |
+| `CopilotModels.Gpt53Codex` | `gpt-5.3-codex` | OpenAI | Latest code-specialized model |
+| `CopilotModels.Gpt52` | `gpt-5.2` | OpenAI | Complex reasoning |
+| `CopilotModels.Gpt51Codex` | `gpt-5.1-codex` | OpenAI | Code generation |
+| `CopilotModels.Gpt5Mini` | `gpt-5-mini` | Azure OpenAI | Fast general-purpose |
+| `CopilotModels.Gpt4o` | `gpt-4o` | Azure OpenAI | Multimodal |
+| **Google** | | | |
+| `CopilotModels.Gemini31Pro` | `gemini-3.1-pro-preview` | Google | Latest Gemini model |
+| `CopilotModels.Gemini3Pro` | `gemini-3-pro-preview` | Google | Long-context reasoning |
+| `CopilotModels.Gemini3Flash` | `gemini-3-flash-preview` | Google | Fast responses |
+| **xAI** | | | |
+| `CopilotModels.GrokCodeFast1` | `grok-code-fast-1` | xAI | Code generation |
+
+### Runtime Discovery
 
 ```csharp
 var discovery = new CopilotModelDiscovery(provider, httpClient, logger);
 var models = await discovery.DiscoverModelsAsync();
+// Returns all 41+ models including embedding and legacy variants
 ```
 
 ## Configuration
@@ -76,7 +91,7 @@ var models = await discovery.DiscoverModelsAsync();
 
 ```csharp
 var kernel = Kernel.CreateBuilder()
-    .UseCopilotChatCompletion(CopilotModels.Gpt4o, options =>
+    .UseCopilotChatCompletion(CopilotModels.ClaudeSonnet46, options =>
     {
         // Override token file location
         options.TokenFilePath = "/custom/path/apps.json";
