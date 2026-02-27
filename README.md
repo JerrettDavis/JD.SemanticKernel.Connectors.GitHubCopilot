@@ -164,6 +164,7 @@ or in the [`docs/`](docs/) directory:
 ## Related Projects
 
 - **[JD.SemanticKernel.Connectors.ClaudeCode](https://github.com/JerrettDavis/ClaudeCodeAuthenticationProvider)** — Same pattern for Claude Code subscriptions
+- **[JD.SemanticKernel.Extensions](https://github.com/JerrettDavis/JD.SemanticKernel.Extensions)** — SK extensions for skills, hooks, plugins, compaction, and semantic memory
 
 Both connectors implement the shared `JD.SemanticKernel.Connectors.Abstractions` interfaces,
 enabling **MCP server bridging** across subscriptions.
