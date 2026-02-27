@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net8.0;net10.0</TargetFrameworks>
+    <PackageId>JD.SemanticKernel.Connectors.Abstractions</PackageId>
+    <Description>
+      Shared interfaces and base types for JD Semantic Kernel connectors.
+      Defines ISessionProvider, IModelDiscoveryProvider, SessionCredentials,
+      and SessionOptionsBase for multi-provider AI authentication.
+    </Description>
+    <PackageTags>semantic-kernel;connectors;abstractions;ai;authentication</PackageTags>
+    <IsPackable>true</IsPackable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!-- netstandard2.0: needs System.Text.Json for potential serialization -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Text.Json" />
+  </ItemGroup>
+
+</Project>
