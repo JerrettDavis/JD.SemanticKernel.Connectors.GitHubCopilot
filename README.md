@@ -1,7 +1,9 @@
 # JD.SemanticKernel.Connectors.GitHubCopilot
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/JerrettDavis/JD.SemanticKernel.Connectors.GitHubCopilot/actions/workflows/ci.yml/badge.svg)](https://github.com/JerrettDavis/JD.SemanticKernel.Connectors.GitHubCopilot/actions/workflows/ci.yml)
 [![NuGet](https://img.shields.io/nuget/v/JD.SemanticKernel.Connectors.GitHubCopilot.svg)](https://www.nuget.org/packages/JD.SemanticKernel.Connectors.GitHubCopilot)
+[![codecov](https://codecov.io/gh/JerrettDavis/JD.SemanticKernel.Connectors.GitHubCopilot/graph/badge.svg)](https://codecov.io/gh/JerrettDavis/JD.SemanticKernel.Connectors.GitHubCopilot)
 
 **Use your GitHub Copilot subscription as an AI backend for [Microsoft Semantic Kernel](https://github.com/microsoft/semantic-kernel) applications.**
 
@@ -134,15 +136,35 @@ jdcplt --list-models
 jdcplt --insecure
 ```
 
+## Documentation
+
+Full documentation is available at [GitHub Pages](https://jerrettdavis.github.io/JD.SemanticKernel.Connectors.GitHubCopilot/)
+or in the [`docs/`](docs/) directory:
+
+- [Getting Started](docs/articles/getting-started.md)
+- [Authentication Flow](docs/articles/authentication-flow.md)
+- [Configuration Reference](docs/articles/configuration-reference.md)
+- [Model Discovery](docs/articles/model-discovery.md)
+
 ## Related Projects
 
 - **[JD.SemanticKernel.Connectors.ClaudeCode](https://github.com/JerrettDavis/ClaudeCodeAuthenticationProvider)** — Same pattern for Claude Code subscriptions
 
-## Prerequisites
+Both connectors implement the shared `JD.SemanticKernel.Connectors.Abstractions` interfaces,
+enabling **MCP server bridging** across subscriptions.
 
-- [GitHub Copilot](https://github.com/features/copilot) subscription (Individual, Business, or Enterprise)
-- GitHub Copilot CLI installed and signed in
-- .NET 8.0+ SDK
+## Building
+
+```bash
+git clone https://github.com/JerrettDavis/JD.SemanticKernel.Connectors.GitHubCopilot.git
+cd JD.SemanticKernel.Connectors.GitHubCopilot
+dotnet build
+dotnet test
+```
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
