@@ -53,8 +53,11 @@ public sealed class CopilotSessionProvider : ISessionProvider, IDisposable
         }
         else
         {
-            _exchangeClient = new HttpClient(
-                CopilotSessionHttpHandler.CreateInnerHandler(_options.DangerouslyDisableSslValidation));
+            var handler = CopilotSessionHttpHandler.CreateInnerHandler(_options.DangerouslyDisableSslValidation);
+#if NET5_0_OR_GREATER
+            handler.CheckCertificateRevocationList = !_options.DangerouslyDisableSslValidation;
+#endif
+            _exchangeClient = new HttpClient(handler);
             _ownsHttpClient = true;
         }
     }
