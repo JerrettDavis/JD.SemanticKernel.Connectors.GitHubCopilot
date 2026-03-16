@@ -24,7 +24,7 @@
 
   <!-- ─── Samples ─── -->
   <ItemGroup>
-    <PackageVersion Include="System.CommandLine" Version="2.0.3" />
+    <PackageVersion Include="System.CommandLine" Version="2.0.5" />
   </ItemGroup>
 
   <!-- ─── Testing ─── -->
