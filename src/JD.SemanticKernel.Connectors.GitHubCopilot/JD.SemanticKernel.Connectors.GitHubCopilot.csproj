@@ -45,7 +45,7 @@
 
   <!-- net8.0+: SK + OpenAI-compatible chat -->
   <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
-    <PackageReference Include="Microsoft.Extensions.Configuration" VersionOverride="10.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" VersionOverride="10.0.6" />
     <PackageReference Include="Microsoft.SemanticKernel" />
   </ItemGroup>
 
