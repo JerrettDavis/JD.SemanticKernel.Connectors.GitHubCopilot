@@ -185,14 +185,11 @@ jobs:
         run: |
           set -euo pipefail
           TAG="v${NBGV_NuGetPackageVersion}"
-          if git rev-parse "$TAG" >/dev/null 2>&1; then
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null 2>&1; then
             echo "Tag $TAG already exists — skipping."
           else
-            # Use GitHub API to create the tag ref (avoids workflows permission issue with git push)
-            gh api "repos/${{ github.repository }}/git/refs" \
-              -X POST \
-              -f "ref=refs/tags/$TAG" \
-              -f "sha=${{ github.sha }}"
+            git tag "$TAG"
+            git push origin "$TAG"
             echo "Created tag $TAG"
           fi
 
