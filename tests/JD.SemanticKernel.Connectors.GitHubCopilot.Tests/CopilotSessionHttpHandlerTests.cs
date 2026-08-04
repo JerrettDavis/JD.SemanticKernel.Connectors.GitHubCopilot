@@ -55,7 +55,7 @@ public class CopilotSessionHttpHandlerTests : IDisposable
         await client.GetAsync("https://api.githubcopilot.com/test");
 
         Assert.Contains("vscode/1.104.1",
-            inner.LastRequest!.Headers.GetValues("Editor-Version"));
+            inner.LastRequest!.Headers.GetValues("Editor-Version"), StringComparer.Ordinal);
     }
 
     [Fact]
@@ -68,7 +68,7 @@ public class CopilotSessionHttpHandlerTests : IDisposable
         await client.GetAsync("https://api.githubcopilot.com/test");
 
         Assert.Contains("GitHubCopilotChat/0.1",
-            inner.LastRequest!.Headers.GetValues("User-Agent"));
+            inner.LastRequest!.Headers.GetValues("User-Agent"), StringComparer.Ordinal);
     }
 
     [Fact]
